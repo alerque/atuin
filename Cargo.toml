@@ -41,7 +41,7 @@ members = ["./atuin-client", "./atuin-server", "./atuin-common"]
 default = ["client", "sync", "server"]
 client = ["atuin-client"]
 sync = ["atuin-client/sync"]
-server = ["atuin-server", "tracing-subscriber"]
+server = ["atuin-server"]
 
 [dependencies]
 atuin-server = { path = "atuin-server", version = "13.0.1", optional = true }
@@ -75,12 +75,13 @@ tiny-bip39 = "1"
 futures-util = "0.3"
 ratatui = "0.20.1"
 fuzzy-matcher = "0.3.7"
+daemonize = "0.5.0"
+tracing = "0.1.37"
 
 [dependencies.tracing-subscriber]
 version = "0.3"
 default-features = false
 features = ["ansi", "fmt", "registry", "env-filter"]
-optional = true
 
 [patch.crates-io]
 ratatui = { git = "https://github.com/conradludgate/tui-rs-revival", branch = "inline" }
